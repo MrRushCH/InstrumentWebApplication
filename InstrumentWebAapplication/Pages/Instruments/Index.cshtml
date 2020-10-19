@@ -1,0 +1,67 @@
+﻿@page
+@model InstrumentWebAapplication.Pages.Instruments.IndexModel
+
+@{
+    ViewData["Title"] = "All Instruments";
+}
+
+<h1>All Instruments</h1>
+
+<p>
+    <a asp-page="../AcousticGuitars/Create">Create New Acoustic Guitar</a>
+</p>
+<p>
+    <a asp-page="../ElectricGuitars/Create">Create New Electric Guitar</a>
+</p>
+<p>
+    <a asp-page="../AcousticPianos/Create">Create New Acoustic Piano</a>
+</p>
+<p>
+    <a asp-page="../DigitalPianos/Create">Create New Digital Piano</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.NameSort">
+                    @Html.DisplayNameFor(model => model.Instrument[0].Name)
+                </a>
+            </th>
+            <th>
+                <a asp-page="./Index" asp-route-sortOrder="@Model.PriceSort">
+                    @Html.DisplayNameFor(model => model.Instrument[0].Price)
+                </a>
+            </th>
+            <th>
+                    @Html.DisplayNameFor(model => model.Instrument[0].DiscriminatorValue)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Instrument)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiscriminatorValue)
+            </td>
+            <td>
+                @{ 
+                    var editPath = $"../{item.DiscriminatorValue}s/Edit";
+                    var detailsPath = $"../{item.DiscriminatorValue}s/Details";
+                    var deletePath = $"../{item.DiscriminatorValue}s/Delete";
+                }
+                <a asp-page="@editPath" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="@detailsPath" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="@deletePath" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

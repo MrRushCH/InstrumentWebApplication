@@ -1,0 +1,52 @@
+﻿@page
+@model InstrumentWebAapplication.Pages.DigitalPianos.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>DigitalPiano</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DigitalPiano.VolumeSetting)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DigitalPiano.VolumeSetting)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DigitalPiano.HasPedal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DigitalPiano.HasPedal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DigitalPiano.NumberOfKeys)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DigitalPiano.NumberOfKeys)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DigitalPiano.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DigitalPiano.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.DigitalPiano.Price)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.DigitalPiano.Price)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="DigitalPiano.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

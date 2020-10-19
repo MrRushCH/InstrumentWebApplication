@@ -1,0 +1,60 @@
+﻿@page
+@model InstrumentWebAapplication.Pages.AcousticGuitars.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>AcousticGuitar</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AcousticGuitar.CapoPosition" class="control-label"></label>
+                <input asp-for="AcousticGuitar.CapoPosition" class="form-control" />
+                <span asp-validation-for="AcousticGuitar.CapoPosition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AcousticGuitar.NumberOfFrets" class="control-label"></label>
+                <input asp-for="AcousticGuitar.NumberOfFrets" class="form-control" />
+                <span asp-validation-for="AcousticGuitar.NumberOfFrets" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AcousticGuitar.InTuneLevel" class="control-label"></label>
+                <input asp-for="AcousticGuitar.InTuneLevel" class="form-control" />
+                <span asp-validation-for="AcousticGuitar.InTuneLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AcousticGuitar.NumberOfStrings" class="control-label"></label>
+                <input asp-for="AcousticGuitar.NumberOfStrings" class="form-control" />
+                <span asp-validation-for="AcousticGuitar.NumberOfStrings" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="AcousticGuitar.Id" />
+            <div class="form-group">
+                <label asp-for="AcousticGuitar.Name" class="control-label"></label>
+                <input asp-for="AcousticGuitar.Name" class="form-control" />
+                <span asp-validation-for="AcousticGuitar.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AcousticGuitar.Price" class="control-label"></label>
+                <input asp-for="AcousticGuitar.Price" class="form-control" />
+                <span asp-validation-for="AcousticGuitar.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,66 @@
+﻿@page
+@model InstrumentWebAapplication.Pages.ElectricGuitars.IndexModel
+
+@{
+    ViewData["Title"] = "Electric Guitars";
+}
+
+<h1>Electric Guitars</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ElectricGuitar[0].VolumeSetting)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ElectricGuitar[0].NumberOfFrets)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ElectricGuitar[0].InTuneLevel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ElectricGuitar[0].NumberOfStrings)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ElectricGuitar[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ElectricGuitar[0].Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ElectricGuitar) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VolumeSetting)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfFrets)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.InTuneLevel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumberOfStrings)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

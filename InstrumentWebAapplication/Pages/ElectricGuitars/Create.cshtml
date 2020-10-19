@@ -1,0 +1,59 @@
+﻿@page
+@model InstrumentWebAapplication.Pages.ElectricGuitars.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ElectricGuitar</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ElectricGuitar.VolumeSetting" class="control-label"></label>
+                <input asp-for="ElectricGuitar.VolumeSetting" class="form-control" />
+                <span asp-validation-for="ElectricGuitar.VolumeSetting" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ElectricGuitar.NumberOfFrets" class="control-label"></label>
+                <input asp-for="ElectricGuitar.NumberOfFrets" class="form-control" />
+                <span asp-validation-for="ElectricGuitar.NumberOfFrets" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ElectricGuitar.InTuneLevel" class="control-label"></label>
+                <input asp-for="ElectricGuitar.InTuneLevel" class="form-control" />
+                <span asp-validation-for="ElectricGuitar.InTuneLevel" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ElectricGuitar.NumberOfStrings" class="control-label"></label>
+                <input asp-for="ElectricGuitar.NumberOfStrings" class="form-control" />
+                <span asp-validation-for="ElectricGuitar.NumberOfStrings" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ElectricGuitar.Name" class="control-label"></label>
+                <input asp-for="ElectricGuitar.Name" class="form-control" />
+                <span asp-validation-for="ElectricGuitar.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ElectricGuitar.Price" class="control-label"></label>
+                <input asp-for="ElectricGuitar.Price" class="form-control" />
+                <span asp-validation-for="ElectricGuitar.Price" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

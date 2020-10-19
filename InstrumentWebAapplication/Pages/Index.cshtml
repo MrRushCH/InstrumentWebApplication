@@ -1,0 +1,47 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Instrument Overview";
+}
+
+    <div class="text-center">
+        <h1 class="display-4">Instrument Overview</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Instrument</th>
+                    <th>Amount</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Acoustic Guitars</td>
+                    <td>@Model.TotalAcousticGuitars</td>
+                    <td><a asp-page="./AcousticGuitars/Index">View</a></td>
+                </tr>
+                <tr>
+                    <td>Acoustic Pianos</td>
+                    <td>@Model.TotalAcousticPianos</td>
+                    <td><a asp-page="./AcousticPianos/Index">View</a></td>
+                </tr>
+                <tr>
+                    <td>Digital Pianos</td>
+                    <td>
+                        @Model.TotalDigitalPianos
+                </td>
+                    <td><a asp-page="./DigitalPianos/Index">View</a></td>
+                </tr>
+                <tr>
+                    <td>Electric Guitars</td>
+                    <td>@Model.TotalElectricGuitars</td>
+                    <td><a asp-page="./ElectricGuitars/Index">View</a></td>
+                </tr>
+                <tr>
+                    <td><b>Total Instruments</b></td>
+                    <td><b>@Model.TotalInstruments</b></td>
+                    <td><a asp-page="./Instruments/Index">View</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
